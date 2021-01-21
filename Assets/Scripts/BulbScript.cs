@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class BulbScript : MonoBehaviour
 {
-    private Animator BulbAnimator;
-    private bool BulbBool;
+   public Animator BulbAnimator;
+    private bool BulbTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
-        BulbAnimator = gameObject.GetComponent<Animator>();
+      
     }
 
     // Update is called once per frame
     void Update()
     {
-        BulbOn();
-        BulbOff();
-    }
-
-    void BulbOn()
-    {
 
     }
 
-    void BulbOff()
+    public void BulbOn()
     {
+        BulbAnimator.SetBool("BulbTrigger" , true);
+        Debug.Log("test");
+    }
 
+    public void BulbOff()
+    {
+        BulbAnimator.SetBool("BulbTrigger", false);
     }
 
 }

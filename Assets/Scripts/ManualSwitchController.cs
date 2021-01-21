@@ -16,6 +16,7 @@ using UnityEngine;
 
 public class ManualSwitchController : MonoBehaviour
 {
+    public BulbScript theBulbScript;
     // switchOff reflects whether the switch is on ot off
     private bool switchOff = true;
 
@@ -76,6 +77,14 @@ public class ManualSwitchController : MonoBehaviour
         {
             switchOff = !switchOff;
             switchAnimator.SetBool("SwitchOff", switchOff);
+            if (switchOff == false)
+            {
+                theBulbScript.BulbOn();
+            }
+            else
+            {
+                theBulbScript.BulbOff();
+            }
         }
         else
         {

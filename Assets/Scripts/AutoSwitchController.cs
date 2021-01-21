@@ -11,6 +11,7 @@ using UnityEngine;
 
 public class AutoSwitchController : MonoBehaviour
 {
+    public BulbScript theBulbScript;
     // switchOff reflects whether the switch is on ot off
     private bool switchOff = true;
 
@@ -46,6 +47,7 @@ public class AutoSwitchController : MonoBehaviour
         Debug.Log("Someone entered the switch trigger");
 
         this.turnOn();
+        theBulbScript.BulbOn();
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -53,6 +55,6 @@ public class AutoSwitchController : MonoBehaviour
         Debug.Log("Someone left the switch trigger");
 
         this.turnOff();
+        theBulbScript.BulbOff();
     }
 }
-
